@@ -35,7 +35,7 @@
     - name: Npm installation
       apt:
         name: npm
-        state: present   
+        state: present
     # Install all the necessary Node modules for the project,using `npm`.
       command: npm install
       args:
