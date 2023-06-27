@@ -9,7 +9,7 @@
     # Update packages
     - name: apt-get update
       apt:
-        name: update
+        name: get-upgrade
         state: present		
     # Install python pip
     - name: Install python pip
