@@ -4,9 +4,13 @@
   become_user: root
   become: True
   vars:
-   # repo_path: nrbaskar/nodejeapp:{{DOCKER_TAG}}
-    dest_path: /home/devsecops/wilfred/{{DOCKER_TAG}}
-  tasks:   
+    dest_path: /home/devsecops/wilfred{{DOCKER_TAG}}
+  tasks:
+	# Install python pip
+    - name: Install python pip
+      apt:
+        name: python3-pip
+        state: present
     #Create a Directory
     - name: create directory
       file:
@@ -20,7 +24,7 @@
     # Install NodeJS library
     # using multiple shell commands
     - name: Install Nodejs & ExpressJS
-      shell: 'curl -sL https://deb.nodesource.com/setup_18.x -o /tmp/nodesource_setup.sh'
+      shell: 'curl -sL https://deb.nodesource.com/setup_16.x -o /tmp/nodesource_setup.sh'
     # If other package are required mention the package name in "name"
     # eg: ngix, curl, wget, apache2, nodejs
     - name: Install reqired packages
@@ -47,6 +51,8 @@
       command: pm2 status
       register: pm2_status
       changed_when: false
+    # command: pm2 start --name React_Pipeline_Frontend npm -- start
+    # command: pm2 start --name dashboard npm -- start
     # Start the node server using "Foverer"
     # The `when` clause identifies if the server is already
     # running. If so, this task is skipped
