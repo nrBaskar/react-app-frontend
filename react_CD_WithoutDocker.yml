@@ -6,16 +6,6 @@
   vars:
     dest_path: /home/devsecops/wilfred{{DOCKER_TAG}}
   tasks:
-    # Update packages
-    - name: apt-get update
-      apt:
-        name: get-upgrade
-        state: present		
-    # Install python pip
-    - name: Install python pip
-      apt:
-        name: python3-pip
-        state: present
     #Create a Directory
     - name: create directory
       file:
@@ -33,12 +23,12 @@
     # If other package are required mention the package name in "name"
     # eg: ngix, curl, wget, apache2, nodejs
     - name: Install reqired packages
-      apt:
+      yum:
         name: nodejs
         state: present
    # npm module installation
     - name: Npm installation
-      apt:
+      yum:
         name: npm
         state: present
     - name: Install Expressjs
