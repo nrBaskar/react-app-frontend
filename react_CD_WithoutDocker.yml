@@ -4,7 +4,7 @@
   become_user: root
   become: True
   vars:
-    dest_path: /home/devsecops/wilfred{{DOCKER_TAG}}
+    dest_path: /home/devsecops/wilfred/{{DOCKER_TAG}}
   tasks:
     #Create a Directory
     - name: create directory
