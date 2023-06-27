@@ -26,11 +26,6 @@
       yum:
         name: nodejs
         state: present
-   # npm module installation
-    - name: Npm installation
-      yum:
-        name: npm
-        state: present
     - name: Install Expressjs
       command: sudo npm install express
     - name: Install React JS package
