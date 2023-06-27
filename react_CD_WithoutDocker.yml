@@ -6,7 +6,7 @@
   vars:
     dest_path: /home/devsecops/wilfred{{DOCKER_TAG}}
   tasks:
-	# Install python pip
+    # Install python pip
     - name: Install python pip
       apt:
         name: python3-pip
