@@ -19,7 +19,7 @@ export const CourseForm = ({ handleSubmit, pristine, reset, submitting, heading,
 
             <Field
                 name="authorId"
-                label="Yuvaraj Sing Man Of the Series"
+                label="Anamalaiyar Pootri"
                 options={authors}
                 component={SelectInput}
             />
