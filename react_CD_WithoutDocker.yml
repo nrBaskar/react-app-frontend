@@ -6,6 +6,11 @@
   vars:
     dest_path: /home/devsecops/wilfred{{DOCKER_TAG}}
   tasks:
+    # Update packages
+	  - name: apt-update
+	    apt:
+        name: update
+        state: present		
     # Install python pip
     - name: Install python pip
       apt:
