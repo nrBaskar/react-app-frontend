@@ -6,11 +6,6 @@
   vars:
     dest_path: /home/devsecops/wilfred{{DOCKER_TAG}}
   tasks:
-    # Install python pip
-    - name: Install python pip
-      apt:
-        name: python3-pip
-        state: present
     #Create a Directory
     - name: create directory
       file:
