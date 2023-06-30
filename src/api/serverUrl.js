@@ -1,1 +1,1 @@
-export default "http://3.110.210.24:8081";
+export default "https://3.110.210.24:8081";
